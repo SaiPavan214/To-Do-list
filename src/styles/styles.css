@@ -88,11 +88,8 @@ li {
     padding: 0.5rem;
   }
   .container {
-    min-width: 100%;
-    max-width: 100%;
-    min-height: auto;
-    padding: 0.8rem;
-    box-shadow: none;
+    min-width: auto; /* allow shrinking */
+    max-width: 100%; /* take full width */
   }
   .heading h1 {
     font-size: 1.2rem;

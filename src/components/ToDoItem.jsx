@@ -7,10 +7,11 @@ function ToDoItem(props) {
       style={{
         display: "flex",
         alignItems: "center",
-        gap: "16px",              // equal gap between all 3 elements
+        gap: "12px",          // smaller gap for better mobile fit
         padding: "8px 12px",
         cursor: "default",
-        maxWidth: "600px",        // optional max width for better layout control
+        maxWidth: "100%",     // full width on small screens
+        flexWrap: "wrap",     // allow items to wrap if needed
       }}
     >
       <input
@@ -27,10 +28,11 @@ function ToDoItem(props) {
           textDecoration: props.completed ? "line-through" : "none",
           userSelect: "none",
           cursor: "pointer",
-          flexGrow: 1,         // text takes remaining space
-          flexShrink: 1,       // text can shrink if needed
-          minWidth: 0,         // allows text to shrink properly in flex container
-          overflowWrap: "break-word",  // break long words to prevent overflow
+          flexGrow: 1,
+          flexShrink: 1,
+          minWidth: 0,
+          overflowWrap: "break-word",
+          marginTop: "4px",    // space if wrapped
         }}
       >
         {props.text}
@@ -44,8 +46,9 @@ function ToDoItem(props) {
           cursor: "pointer",
           color: "#ff4d4d",
           fontSize: "18px",
-          flexShrink: 0,       // prevent button from shrinking
+          flexShrink: 0,
           padding: "4px",
+          marginTop: "4px",    // consistent spacing if wrapped
         }}
         aria-label="Delete"
       >

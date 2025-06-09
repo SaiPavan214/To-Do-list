@@ -1,3 +1,4 @@
+/* === General Page Styling === */
 body {
   background-color: #ffeaa7;
   min-height: 70vh;
@@ -12,12 +13,11 @@ body {
   font-size: 130%;
 }
 
+/* === Container === */
 .container {
   width: 100%;
   height: auto;
   min-height: 500px;
-  max-width: 500px;
-  min-width: 250px;
   background: #f1f5f8;
   background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
   background-size: 25px 25px;
@@ -27,6 +27,7 @@ body {
   box-sizing: border-box;
 }
 
+/* === Heading === */
 .heading {
   display: flex;
   align-items: center;
@@ -37,11 +38,12 @@ body {
 .heading h1 {
   transform: rotate(2deg);
   padding: 0.2rem 1.2rem;
-  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+  border-radius: 20% 5% 20% 5% / 5% 20% 25% 20%;
   background-color: #fdcb6e;
   font-size: 1.5rem;
 }
 
+/* === Form Input === */
 .form input {
   box-sizing: border-box;
   background-color: transparent;
@@ -57,6 +59,7 @@ body {
   margin-bottom: 20px;
 }
 
+/* === Button Styles === */
 button {
   padding: 0;
   border: none;
@@ -75,35 +78,86 @@ button span {
   border: 2px solid hsl(198, 1%, 29%);
 }
 
+ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+/* === To-Do Item List === */
 li {
   text-align: left;
   position: relative;
-  padding: 0.5rem;
 }
 
-/* Mobile responsiveness */
+/* === ToDoItem Component Styles === */
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* padding: 8px 12px; */
+  cursor: default;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.todo-checkbox {
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-text {
+  user-select: none;
+  cursor: pointer;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+  margin-top: 4px;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ff4d4d;
+  font-size: 18px;
+  flex-shrink: 0;
+  padding: 4px;
+  margin-top: 4px;
+}
+
+/* === Responsive Design === */
 @media (max-width: 600px) {
   body {
     font-size: 110%;
     padding: 0.5rem;
   }
+
   .container {
-    min-width: 100%; /* allow shrinking */
-    max-width: 100%; /* take full width */
+    min-width: 100%;
+    max-width: 100%;
   }
+
   .heading h1 {
     font-size: 1.2rem;
     padding: 0.15rem 0.8rem;
   }
+
   .form input {
     width: 100%;
     font-size: 1rem;
     margin-bottom: 1rem;
   }
+
   button span {
     padding: 0.4rem 0.8rem;
     font-size: 1rem;
   }
+
   li {
     padding: 0.5rem 0.3rem;
     font-size: 1rem;
